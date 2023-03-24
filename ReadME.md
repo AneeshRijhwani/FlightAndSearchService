@@ -2,20 +2,20 @@
 
 ## Project Setup
 - Clone the project on your local 
-- Execite "npm install" on the same patha as of your root directory of the download project
-- Create a ".env" file in the root dirctory and add the following environment variables 
-  - "PORT = 3000"
-- Inside the "src/config" folder create a new file "config.json" and add tha following peice of json
-'''
-{
+- Execite `npm install` on the same patha as of your root directory of the download project
+- Create a `.env` file in the root dirctory and add the following environment variables 
+  - `PORT = 3000`
+- Inside the `src/config ` folder create a new file `config.json` and add tha following peice of json
+```
+ {
   "development": {
-    "username": "root",
-    "password": "12345678",
+    "username": "`Your DB Login Name`",
+    "password": "`Your DB Password`",
     "database": "Flights_Search_DB_Dev",
     "host": "127.0.0.1",
     "dialect": "mysql"
   } 
-}
-'''
+ }
+```
 
-- Once you've added your db config as listed above , go to the src folder from your terminal and execute "npx sequelize db:create"
+- Once you've added your db config as listed above , go to the src folder from your terminal and execute `npx sequelize db:create`
