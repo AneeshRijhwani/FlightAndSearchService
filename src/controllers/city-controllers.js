@@ -1,10 +1,10 @@
-const { response } = require("express");
-const {CityService} = require("../services/index");
-const cityService=new CityService();
+const { response } = require('express');
+const {CityService} = require('../services/index');
+const cityService = new CityService();
 
 const create = async(req,res)=>{
     try {
-        const city= await cityService.crateCity(req.body);
+        const city= await cityService.createCity(req.body);
         return res.status(201).json({
             data:city,
             success:true,

@@ -1,17 +1,17 @@
-const express=require("express");
-const bodyParser = require("body-parser");
+const express=require('express');
+const bodyParser = require('body-parser');
 
-const{Port}=require("./config/ServerConfig");
-const CityRepository=require("./repository/city-repository");
+const{PORT}=require('./config/ServerConfig');
+const ApiRoutes=require('./routes/index');
+
 const setupAndStartServer=async ()=> {
     const app= express();
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({extended:true}))
-    
-    app.listen(Port, async()=>{
-        console.log("Server Started at ",Port);
-        const repo = new CityRepository();
-        repo.createCity({name:"New delhi"});
+    app.use(bodyParser.urlencoded({extended:true}));
+    app.use('/api', ApiRoutes);
+    app.listen(PORT, async()=>{
+        console.log("Server Started at ",PORT);
+        
     });
 
 }
