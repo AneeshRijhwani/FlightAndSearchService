@@ -5,7 +5,7 @@ const{PORT}=require('./config/ServerConfig');
 const ApiRoutes=require('./routes/index');
 // const{Airport,City}= require('./models/index')
 const db = require('./models/index')
-
+// const{Airplane}=require('./models/index')
 const setupAndStartServer=async ()=> {
     const app= express();
     app.use(bodyParser.json());
@@ -16,6 +16,7 @@ const setupAndStartServer=async ()=> {
         if (process.env.SYNC_DB) {
             db.sequelize.sync({alter:true});   
         }
+        
     });
 
 }
